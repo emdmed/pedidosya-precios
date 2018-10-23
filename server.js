@@ -12,19 +12,13 @@ app.use(bodyParser.json());
 
 const prices_AR = []; 
 
-let ult_promedio;
-
-function finish(){
-    console.log("FINISHED");
-}
-
 function search(){
     return fetch(`${url}`)
     .then(response => response.text());
 }
 
 
-setInterval(run, 14000);
+setInterval(run, 864000000);
 
 search()
     .then(body =>{
@@ -78,8 +72,7 @@ search()
               let min = date.getMinutes();
 
               fs.appendFileSync(`data/promedio-${hour}-${min}-${day}-${month}-${year}.txt`, "Promedio de precios " + promedio + " pesos");
-              fs.appendFileSync(`data/raw-precios-${hour}-${min}-${day}-${month}-${year}.txt`, splitted_in_num + resto_link);
-
+              fs.appendFileSync(`data/rawdata/raw-prices-${hour}-${min}-${day}-${month}-${year}.txt`, "Promedio de precios " + promedio + " pesos");
             });               
     });
 });
@@ -138,6 +131,7 @@ search()
               let min = date.getMinutes();
 
               fs.appendFileSync(`data/promedio-${hour}-${min}-${day}-${month}-${year}.txt`, "Promedio de precios " + promedio + " pesos");
+              fs.appendFileSync(`data/rawdata/raw-prices-${hour}-${min}-${day}-${month}-${year}.txt`, "Promedio de precios " + promedio + " pesos");
 
             });               
     });
