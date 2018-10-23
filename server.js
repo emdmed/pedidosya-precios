@@ -71,8 +71,8 @@ search()
               let hour = date.getHours();
               let min = date.getMinutes();
 
-              fs.appendFileSync(`data/promedio-${hour}-${min}-${day}-${month}-${year}.txt`, "Promedio de precios " + promedio + " pesos");
-              fs.appendFileSync(`data/rawdata/raw-prices-${hour}-${min}-${day}-${month}-${year}.txt`, "Promedio de precios " + promedio + " pesos");
+              fs.writeFileSync(`data/promedio-${hour}-${min}-${day}-${month}-${year}.txt`, "Promedio de precios " + promedio + " pesos");
+              fs.writeFileSync(`data/rawdata/raw-prices-${hour}-${min}-${day}-${month}-${year}.txt`, splitted_in_num);
             });               
     });
 });
@@ -130,8 +130,8 @@ search()
               let hour = date.getHours();
               let min = date.getMinutes();
 
-              fs.appendFileSync(`data/promedio-${hour}-${min}-${day}-${month}-${year}.txt`, "Promedio de precios " + promedio + " pesos");
-              fs.appendFileSync(`data/rawdata/raw-prices-${hour}-${min}-${day}-${month}-${year}.txt`, "Promedio de precios " + promedio + " pesos");
+              fs.writeFileSync(`data/promedio-${hour}-${min}-${day}-${month}-${year}.txt`, "Promedio de precios " + promedio + " pesos");
+              fs.writeFileSync(`data/rawdata/raw-prices-${hour}-${min}-${day}-${month}-${year}.txt`, splitted_in_num);
 
             });               
     });
